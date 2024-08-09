@@ -1,0 +1,15 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
+
+  .login_wrapper {
+    background: #fff;
+  }
+}

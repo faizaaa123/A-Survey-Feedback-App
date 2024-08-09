@@ -1,0 +1,47 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.delete-account {
+  color: var(--red);
+}
+
+.form__white.dashboard-col {
+  border-radius: 6px !important;
+  width: auto;
+}
+.settings-form-input {
+  width: 450px !important;
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
+
+  .settings-form-input {
+    width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
+  .mob-no-right {
+    text-align: left;
+  }
+  .mob__col-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mob__col-left > *:not(:last-child) {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  .settings-form-input {
+    width: 100% !important;
+  }
+}
