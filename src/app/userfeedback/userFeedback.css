@@ -20,7 +20,7 @@ body {
 }
 
 .feedback_wrapper.align-center {
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .absolute-back-container {
