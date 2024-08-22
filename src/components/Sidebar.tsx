@@ -389,10 +389,12 @@ const Sidebar: React.FC<HeadAsideProps> = ({ data }) => {
                                 'align-center pointer ' +
                                 (disable ? 'disabled' : '')
                               }
-                              onClick={handleDelete}
                             >
                               <Delete />
-                              <span className="delete-account">
+                              <span
+                                className="delete-account"
+                                onClick={handleDelete}
+                              >
                                 Really Delete?
                               </span>
                               <span
