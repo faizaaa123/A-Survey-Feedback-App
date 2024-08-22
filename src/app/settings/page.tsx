@@ -49,7 +49,7 @@ const Setting = () => {
     onUpdate(user.email, password, setPassword);
   };
 
-  //retry calls on internet back connection
+  //retry call
   useDebounceRetry(retry);
 
   return (
@@ -228,7 +228,10 @@ const Setting = () => {
                         <i className="loader"></i>
                       </button>
                     ) : (
-                      <button className="align-center text-1x1">
+                      <button
+                        className="align-center text-1x1"
+                        disabled={disable}
+                      >
                         <span className="black-regular">Update</span>{' '}
                         <SubmitFeedback />
                       </button>

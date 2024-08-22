@@ -49,7 +49,7 @@ describe('Signup Hook', () => {
     await waitFor(() =>
       expect(result.current).toMatchObject({
         isSignupLoading: false,
-        disable: false,
+        disable: true,
         isSignupSuccess: 'Successfully Signed Up',
       })
     );

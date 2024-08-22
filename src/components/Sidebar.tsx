@@ -158,17 +158,17 @@ const Sidebar: React.FC<HeadAsideProps> = ({ data }) => {
                         <p>Settings</p>
                       </Link>
                     </li>
-                    <li className="row-gap row-gap_10" onClick={handleLogout}>
+                    <li
+                      className={
+                        'row-gap row-gap_10 ' +
+                        (logoutDisable ? 'disabled' : '')
+                      }
+                      onClick={handleLogout}
+                    >
                       <div className="align-center pointer">
                         <Signout />
                         {isLogoutLoading ? (
-                          <span
-                            className={
-                              'align-center ' + logoutDisable ? 'disabled' : ''
-                            }
-                          >
-                            Logging Out
-                          </span>
+                          <span className="align-center">Logging Out</span>
                         ) : (
                           <span className="align-center">Logout</span>
                         )}
@@ -205,33 +205,39 @@ const Sidebar: React.FC<HeadAsideProps> = ({ data }) => {
                       <>
                         <div className="hr"></div>
                         <li className="row-gap row-gap_10">
-                          <div className="align-center pointer">
-                            <Delete />
+                          <div className="align-center">
                             {isDelete ? (
-                              <div className="align-center">
-                                <span
-                                  className={
-                                    'delete-account ' +
-                                    (disable ? 'disabled' : '')
-                                  }
-                                  onClick={handleDelete}
-                                >
+                              <div
+                                className={
+                                  'align-center pointer ' +
+                                  (disable ? 'disabled' : '')
+                                }
+                                onClick={handleDelete}
+                              >
+                                <Delete />
+                                <span className="delete-account">
                                   Really Delete?
                                 </span>
                                 <span
-                                  className="text-09x1 grey-medium"
+                                  className="text-09x1 grey-medium pointer"
                                   onClick={() => setIsDelete(false)}
                                 >
                                   Cancel
                                 </span>
                               </div>
                             ) : (
-                              <span
-                                className="delete-account"
+                              <div
+                                className={
+                                  'align-center pointer ' +
+                                  (disable ? 'disabled' : '')
+                                }
                                 onClick={() => setIsDelete(true)}
                               >
-                                Delete Account
-                              </span>
+                                <Delete />
+                                <span className="delete-account">
+                                  Delete Account
+                                </span>
+                              </div>
                             )}
                           </div>
                           {isDeleteLoading && (
@@ -350,17 +356,17 @@ const Sidebar: React.FC<HeadAsideProps> = ({ data }) => {
                       <p>Settings</p>
                     </Link>
                   </li>
-                  <li className="row-gap row-gap_10" onClick={handleLogout}>
-                    <div className="align-center pointer">
+                  <li className="row-gap row-gap_10">
+                    <div
+                      className={
+                        'align-center pointer ' +
+                        (logoutDisable ? 'disabled' : '')
+                      }
+                      onClick={handleLogout}
+                    >
                       <Signout />
                       {isLogoutLoading ? (
-                        <span
-                          className={
-                            'align-center ' + logoutDisable ? 'disabled' : ''
-                          }
-                        >
-                          Logging Out
-                        </span>
+                        <span className="align-center">Logging Out</span>
                       ) : (
                         <span className="align-center">Logout</span>
                       )}
@@ -376,33 +382,39 @@ const Sidebar: React.FC<HeadAsideProps> = ({ data }) => {
                     <>
                       <div className="hr"></div>
                       <li className="row-gap row-gap_10">
-                        <div className="align-center pointer">
-                          <Delete />
+                        <div className="align-center">
                           {isDelete ? (
-                            <div className="align-center">
-                              <span
-                                className={
-                                  'delete-account ' +
-                                  (disable ? 'disabled' : '')
-                                }
-                                onClick={handleDelete}
-                              >
+                            <div
+                              className={
+                                'align-center pointer ' +
+                                (disable ? 'disabled' : '')
+                              }
+                              onClick={handleDelete}
+                            >
+                              <Delete />
+                              <span className="delete-account">
                                 Really Delete?
                               </span>
                               <span
-                                className="text-09x1 grey-medium"
+                                className="text-09x1 grey-medium pointer"
                                 onClick={() => setIsDelete(false)}
                               >
                                 Cancel
                               </span>
                             </div>
                           ) : (
-                            <span
-                              className="delete-account"
+                            <div
+                              className={
+                                'align-center pointer ' +
+                                (disable ? 'disabled' : '')
+                              }
                               onClick={() => setIsDelete(true)}
                             >
-                              Delete Account
-                            </span>
+                              <Delete />
+                              <span className="delete-account">
+                                Delete Account
+                              </span>
+                            </div>
                           )}
                         </div>
                         {isDeleteLoading && (

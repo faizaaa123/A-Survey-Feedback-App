@@ -85,7 +85,7 @@ describe('Sidebar Component', () => {
 
     const submitButton = screen.getByText('Logging Out');
     expect(submitButton).toBeInTheDocument();
-    expect(submitButton).toHaveClass('disabled');
+    expect(submitButton.parentElement).toHaveClass('disabled');
   });
 
   it('handles error state when login fails', () => {
@@ -131,7 +131,7 @@ describe('Sidebar Component', () => {
 
     const reallySubmitButton = screen.getByText('Really Delete?');
     expect(reallySubmitButton).toBeInTheDocument();
-    expect(reallySubmitButton).toHaveClass('disabled');
+    expect(reallySubmitButton.parentElement).toHaveClass('disabled');
     const cancelButton = screen.getByText('Cancel');
     expect(cancelButton).toBeInTheDocument();
 

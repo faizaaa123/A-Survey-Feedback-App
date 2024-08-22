@@ -94,7 +94,7 @@ const Login = () => {
                   <i className="loader"></i>
                 </button>
               ) : (
-                <button className="align-center text-1x1">
+                <button className="align-center text-1x1" disabled={disable}>
                   <span className="black-regular">Log In</span> <SignIn />
                 </button>
               )}

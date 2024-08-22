@@ -13,7 +13,7 @@ interface User {
 
 const useSignup = () => {
   const router = useRouter();
-  const [disable, setDisable] = useState<boolean>(true);
+  const [disable, setDisable] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>();
   const [success, setSuccess] = useState<string>();
@@ -30,6 +30,7 @@ const useSignup = () => {
       if (user.password !== user.password_confirmation) {
         setError('Password does not match');
         setUser({ ...user, password: '', password_confirmation: '' });
+        setDisable(false);
         return;
       }
       const response = await axios.post(`/api/users/signup`, {
@@ -48,9 +49,9 @@ const useSignup = () => {
         error?.response?.data?.error?.message || error.message
       );
       setError(error?.response?.data?.error?.message || 'An error occurred');
+      setDisable(false);
     } finally {
       setLoading(false);
-      setDisable(false);
     }
   };
 

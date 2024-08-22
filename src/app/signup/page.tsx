@@ -208,7 +208,7 @@ const SignUp = () => {
                   <i className="loader"></i>
                 </button>
               ) : (
-                <button className="align-center text-1x1">
+                <button className="align-center text-1x1" disabled={disable}>
                   <span className="black-regular">Sign Up</span> <SignIn />
                 </button>
               )}

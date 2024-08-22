@@ -27,9 +27,9 @@ const useDeleteAccount = () => {
         error?.response?.data?.error?.message || error.message
       );
       setError('An error occurred');
+      setDisable(false);
     } finally {
       setLoading(false);
-      setDisable(false);
     }
   };
 

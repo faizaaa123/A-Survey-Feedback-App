@@ -22,9 +22,9 @@ const useLogout = () => {
     } catch (error: any) {
       console.log(error.message);
       setError('An error occured');
+      setDisable(false);
     } finally {
       setLoading(false);
-      setDisable(false);
     }
   };
   return {

@@ -42,7 +42,7 @@ describe('Login Hook', () => {
     await waitFor(() =>
       expect(result.current).toMatchObject({
         isLoginLoading: false,
-        disable: false,
+        disable: true,
         isLoginSuccess: 'Redirecting...',
       })
     );

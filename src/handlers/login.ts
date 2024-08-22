@@ -9,7 +9,7 @@ interface User {
 
 const useLogin = () => {
   const router = useRouter();
-  const [disable, setDisable] = useState<boolean>(true);
+  const [disable, setDisable] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
@@ -34,9 +34,9 @@ const useLogin = () => {
         error?.response?.data?.error?.message || error.message
       );
       setError(error?.response?.data?.error?.message || 'An error occurred');
+      setDisable(false);
     } finally {
       setLoading(false);
-      setDisable(false);
     }
   };
 

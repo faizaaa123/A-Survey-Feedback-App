@@ -41,7 +41,7 @@ describe('Delete Account Hook', () => {
     await waitFor(() =>
       expect(result.current).toMatchObject({
         isDeleteLoading: false,
-        disable: false,
+        disable: true,
         isDeleteSuccess: 'User deleted successfully',
       })
     );

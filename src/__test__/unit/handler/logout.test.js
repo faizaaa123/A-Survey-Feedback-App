@@ -40,7 +40,7 @@ describe('Logout Hook', () => {
     await waitFor(() =>
       expect(result.current).toMatchObject({
         isLogoutLoading: false,
-        logoutDisable: false,
+        logoutDisable: true,
         isLogoutSuccess: 'Redirecting...',
       })
     );
